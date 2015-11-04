@@ -1,7 +1,5 @@
 package security_lab
 
-import scala.collection.mutable.ArrayBuffer
-
 object Lab1 {
   
   def main(args: Array[String]): Unit = {
