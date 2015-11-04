@@ -31,13 +31,11 @@ object Lab1 {
   }
   
   def buildRect(in: String, key: Array[Int],pos:Int,slen:Int):List[String] = {
-    
-    val keysize = key.length
-    val res:ArrayBuffer[String] = ArrayBuffer()
-    if  (keysize < slen){
-      List(in.subSequence(pos, pos+keysize).toString()) ::: buildRect(in,key,pos + keysize,slen-keysize)
+    val kl = key.length
+    if  (kl < slen){
+      List(in.subSequence(pos, pos+kl).toString()) ::: buildRect(in,key,pos + kl,slen-kl)
     }else {
-      val noise = keysize - slen
+      val noise = kl - slen
       List(in.subSequence(pos, pos+slen).toString()++"-"*noise)
     }
     
